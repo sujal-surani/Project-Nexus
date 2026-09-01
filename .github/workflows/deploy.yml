@@ -35,13 +35,13 @@ jobs:
         docker push -a $ECR_REGISTRY/$ECR_REPOSITORY
 
     - name: Deploy to EC2 via SSM
-          env:
-            ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-            INSTANCE_ID: ${{ secrets.EC2_INSTANCE_ID }}
-          run: |
-            SCRIPT="aws ecr get-login-password --region ${{ env.AWS_REGION }} | docker login --username AWS --password-stdin $ECR_REGISTRY && docker pull $ECR_REGISTRY/$ECR_REPOSITORY:latest && docker stop nexus-api || true && docker rm nexus-api || true && docker run -d --name nexus-api -p 80:80 $ECR_REGISTRY/$ECR_REPOSITORY:latest"
-            
-            aws ssm send-command \
-              --instance-ids "$INSTANCE_ID" \
-              --document-name "AWS-RunShellScript" \
-              --parameters commands=["$SCRIPT"]
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        INSTANCE_ID: ${{ secrets.EC2_INSTANCE_ID }}
+      run: |
+        SCRIPT="aws ecr get-login-password --region ${{ env.AWS_REGION }} | docker login --username AWS --password-stdin $ECR_REGISTRY && docker pull $ECR_REGISTRY/$ECR_REPOSITORY:latest && docker stop nexus-api || true && docker rm nexus-api || true && docker run -d --name nexus-api -p 80:80 $ECR_REGISTRY/$ECR_REPOSITORY:latest"
+        
+        aws ssm send-command \
+          --instance-ids "$INSTANCE_ID" \
+          --document-name "AWS-RunShellScript" \
+          --parameters commands=["$SCRIPT"]

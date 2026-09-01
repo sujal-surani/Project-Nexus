@@ -1,3 +1,8 @@
+resource "aws_key_pair" "ec2_my_key" {
+  key_name = "ec2-my-key"
+  public_key = file("ec2-my-key.pub")
+}
+
 resource "aws_iam_role" "ec2_role" {
   name = "nexus-ec2-role"
   assume_role_policy = jsonencode({
@@ -31,6 +36,13 @@ resource "aws_security_group" "nexus_sg" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+
+  ingress {
+    from_port = 22
+    to_port = 22
+    protocol = "tcp"
+    cidr_blocks = [ "0.0.0.0/0" ]
+  }
   
   egress {
     from_port   = 0
@@ -45,6 +57,7 @@ resource "aws_instance" "nexus_host" {
   instance_type        = "t3.micro"
   iam_instance_profile = aws_iam_instance_profile.ec2_profile.name
   vpc_security_group_ids = [aws_security_group.nexus_sg.id]
+  key_name = aws_key_pair.ec2_my_key.key_name
 
   user_data = file("script.sh")
 

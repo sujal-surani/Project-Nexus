@@ -9,7 +9,7 @@ env:
   ECR_REPOSITORY: nexus-api-repo
 
 jobs:
-  build-and-push:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Code
@@ -33,3 +33,19 @@ jobs:
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push -a $ECR_REGISTRY/$ECR_REPOSITORY
+
+    - name: Deploy to EC2 via SSM
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        INSTANCE_ID: ${{ secrets.EC2_INSTANCE_ID }}
+      run: |
+        aws ssm send-command \
+          --instance-ids "$INSTANCE_ID" \
+          --document-name "AWS-RunShellScript" \
+          --parameters commands=[ \
+            "aws ecr get-login-password --region ${{ env.AWS_REGION }} | docker login --username AWS --password-stdin $ECR_REGISTRY", \
+            "docker pull $ECR_REGISTRY/$ECR_REPOSITORY:latest", \
+            "docker stop nexus-api || true", \
+            "docker rm nexus-api || true", \
+            "docker run -d --name nexus-api -p 80:80 -p 443:443 $ECR_REGISTRY/$ECR_REPOSITORY:latest" \
+          ]

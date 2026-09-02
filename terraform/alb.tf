@@ -5,6 +5,10 @@ data "aws_subnets" "default" {
   }
 }
 
+data "aws_vpc" "default" {
+  default = true
+}
+
 resource "aws_alb" "nexus_alb" {
   name = "nexus-api-alb"
   internal = false
@@ -17,7 +21,7 @@ resource "aws_alb_target_group" "nexus_tg" {
   name = "nexus-api-tg"
   port = 80
   protocol = "HTTP"
-  vpc_id = data.aws_subnets.default.id
+  vpc_id = data.aws_vpc.default.id
 }
 
 resource "aws_alb_target_group_attachment" "nexus_attach" {

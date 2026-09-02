@@ -125,5 +125,8 @@ git push origin main
 
 ## Contact
 
-**Sujal Surani** - [sujal.surani26@vupune.ac.in](mailto:sujal.surani26@vupune.ac.in)
-Project Link: [https://github.com/sujal-surani/nexus](https://github.com/sujal-surani/nexus)
+**Sujal Surani** - [https://www.linkedin.com/in/sujal-surani/]
+
+## Maintainer
+
+Created and maintained by **Sujal Surani**.

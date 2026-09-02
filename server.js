@@ -3,7 +3,7 @@ const app = express();
 
 const port = 80;
 
-app.get('/api/health', (res, req) =>{
+app.get('/api/health', (req, res) =>{
     res.status(200).json({status : 'healthy', pipeline : 'active', version : "1.0" });
 });
 

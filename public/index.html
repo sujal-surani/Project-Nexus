@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus - AI-Powered Learning Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900 font-sans">
+
+  <!-- Navigation -->
+  <nav class="border-b bg-white/80 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-2">
+          <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white">
+            <i data-lucide="brain" class="w-5 h-5"></i>
+          </div>
+          <span class="text-xl font-bold text-indigo-600">Nexus</span>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#features" class="text-slate-600 hover:text-slate-900 transition-colors">Features</a>
+          <a href="#testimonials" class="text-slate-600 hover:text-slate-900 transition-colors">Testimonials</a>
+          <a href="#pricing" class="text-slate-600 hover:text-slate-900 transition-colors">Pricing</a>
+          <a href="/auth/login" class="px-4 py-2 border border-slate-300 rounded-md hover:bg-slate-100 font-medium">Sign In</a>
+          <a href="/auth/register" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 font-medium">Get Started</a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <div class="md:hidden">
+          <button id="menu-btn" class="p-2 text-slate-600 hover:text-slate-900 focus:outline-none">
+            <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div id="mobile-menu" class="hidden md:hidden py-4 border-t space-y-4">
+        <a href="#features" class="block text-slate-600 hover:text-slate-900">Features</a>
+        <a href="#testimonials" class="block text-slate-600 hover:text-slate-900">Testimonials</a>
+        <a href="#pricing" class="block text-slate-600 hover:text-slate-900">Pricing</a>
+        <div class="flex flex-col space-y-2 pt-2">
+          <a href="/auth/login" class="w-full text-center px-4 py-2 border border-slate-300 rounded-md font-medium">Sign In</a>
+          <a href="/auth/register" class="w-full text-center px-4 py-2 bg-indigo-600 text-white rounded-md font-medium">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto text-center space-y-8">
+      <div class="space-y-4">
+        <span class="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-700">
+          <i data-lucide="sparkles" class="w-4 h-4 mr-2"></i>
+          AI-Powered Learning Platform
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900">
+          Transform Your Learning with <span class="text-indigo-600">Nexus</span>
+        </h1>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+          Experience the future of education with AI-powered study tools, collaborative learning, and intelligent note management designed for modern students.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/auth/register" class="inline-flex items-center justify-center px-8 py-4 text-lg font-medium bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 shadow-sm">
+          Start Learning Free
+          <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+        </a>
+        <a href="/auth/login" class="inline-flex items-center justify-center px-8 py-4 text-lg font-medium border border-slate-300 bg-white text-slate-700 rounded-lg hover:bg-slate-50">
+          Sign In
+          <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+        </a>
+      </div>
+
+      <div class="pt-8 flex justify-center">
+        <div class="w-full max-w-4xl h-80 bg-slate-200 border-2 border-dashed border-slate-300 rounded-xl flex items-center justify-center text-slate-400">
+          <p class="text-lg">Dashboard Preview</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-100/60">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center space-y-4 mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">Powerful Features for Modern Learning</h2>
+        <p class="text-xl text-slate-600 max-w-2xl mx-auto">Everything you need to excel in your studies, powered by cutting-edge AI technology</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="p-6 bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-lg flex items-center justify-center mb-4"><i data-lucide="brain" class="w-6 h-6"></i></div>
+          <h3 class="text-xl font-semibold mb-2">AI Study Assistant</h3>
+          <p class="text-slate-600">Get personalized help with your studies using advanced AI technology.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-lg flex items-center justify-center mb-4"><i data-lucide="book-open" class="w-6 h-6"></i></div>
+          <h3 class="text-xl font-semibold mb-2">Smart Notes Hub</h3>
+          <p class="text-slate-600">Organize, share, and discover study materials with intelligent categorization.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-lg flex items-center justify-center mb-4"><i data-lucide="users" class="w-6 h-6"></i></div>
+          <h3 class="text-xl font-semibold mb-2">Collaborative Learning</h3>
+          <p class="text-slate-600">Connect with classmates and study together in real-time.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-lg flex items-center justify-center mb-4"><i data-lucide="message-square" class="w-6 h-6"></i></div>
+          <h3 class="text-xl font-semibold mb-2">Interactive Chat</h3>
+          <p class="text-slate-600">Discuss topics, ask questions, and get instant help from peers.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-lg flex items-center justify-center mb-4"><i data-lucide="trophy" class="w-6 h-6"></i></div>
+          <h3 class="text-xl font-semibold mb-2">Gamified Learning</h3>
+          <p class="text-slate-600">Earn XP, compete on leaderboards, and track your progress.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-lg flex items-center justify-center mb-4"><i data-lucide="search" class="w-6 h-6"></i></div>
+          <h3 class="text-xl font-semibold mb-2">Advanced Search</h3>
+          <p class="text-slate-600">Find exactly what you need with semantic and AI-powered search.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto text-center space-y-4 mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">Loved by Students Worldwide</h2>
+      <p class="text-xl text-slate-600">See what students are saying about their Nexus experience</p>
+    </div>
+
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="p-6 bg-white rounded-xl border border-slate-200 shadow-sm space-y-4 text-left">
+        <div class="flex text-amber-400 space-x-1">
+          <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+        </div>
+        <p class="text-slate-600">"Nexus transformed how I study. The AI assistant helps me understand complex algorithms effortlessly!"</p>
+        <div class="flex items-center space-x-3 pt-2">
+          <div class="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">SC</div>
+          <div><p class="font-semibold text-slate-900">Sarah Chen</p><p class="text-sm text-slate-500">Computer Science Student</p></div>
+        </div>
+      </div>
+
+      <div class="p-6 bg-white rounded-xl border border-slate-200 shadow-sm space-y-4 text-left">
+        <div class="flex text-amber-400 space-x-1">
+          <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+        </div>
+        <p class="text-slate-600">"The collaborative features are amazing. I can study with my classmates even when we're apart."</p>
+        <div class="flex items-center space-x-3 pt-2">
+          <div class="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">MJ</div>
+          <div><p class="font-semibold text-slate-900">Marcus Johnson</p><p class="text-sm text-slate-500">Engineering Student</p></div>
+        </div>
+      </div>
+
+      <div class="p-6 bg-white rounded-xl border border-slate-200 shadow-sm space-y-4 text-left">
+        <div class="flex text-amber-400 space-x-1">
+          <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+        </div>
+        <p class="text-slate-600">"The note organization and search features save me hours every week. Highly recommend!"</p>
+        <div class="flex items-center space-x-3 pt-2">
+          <div class="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">ER</div>
+          <div><p class="font-semibold text-slate-900">Emily Rodriguez</p><p class="text-sm text-slate-500">Medical Student</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 px-4 sm:px-6 lg:px-8 bg-indigo-600 text-white text-center">
+    <div class="max-w-4xl mx-auto space-y-8">
+      <h2 class="text-3xl sm:text-4xl font-bold">Ready to Transform Your Learning?</h2>
+      <p class="text-xl text-indigo-100">Join thousands of students who are already using Nexus to achieve their academic goals</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/auth/register" class="inline-flex items-center justify-center px-8 py-4 text-lg font-medium bg-white text-indigo-600 rounded-lg hover:bg-indigo-50">
+          Get Started Free
+          <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+        </a>
+        <a href="/auth/login" class="inline-flex items-center justify-center px-8 py-4 text-lg font-medium border border-white text-white rounded-lg hover:bg-white/10">
+          Sign In
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 px-4 sm:px-6 lg:px-8 border-t bg-white">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="space-y-4">
+        <div class="flex items-center space-x-2">
+          <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white">
+            <i data-lucide="brain" class="w-5 h-5"></i>
+          </div>
+          <span class="text-xl font-bold text-indigo-600">Nexus</span>
+        </div>
+        <p class="text-slate-500">Empowering students with AI-powered learning tools for academic success.</p>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-4 text-slate-900">Get Started</h3>
+        <div class="space-y-2 text-slate-600">
+          <a href="/auth/register" class="block hover:text-slate-900">Sign Up</a>
+          <a href="/auth/login" class="block hover:text-slate-900">Sign In</a>
+          <a href="#features" class="block hover:text-slate-900">Features</a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t mt-8 pt-8 text-center text-slate-400 text-sm">
+      <p>&copy; 2026 Nexus. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

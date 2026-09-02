@@ -7,3 +7,6 @@ output "instance_ip" {
 output "instance_id" {
   value = aws_instance.nexus_host.id
 }
+output "alb_dns_name" {
+  value = aws_alb.nexus_alb.dns_name
+}

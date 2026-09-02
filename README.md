@@ -123,6 +123,4 @@ git push origin main
 
 ---
 
-## License
-
-Distributed under the MIT License.
+## BY Sujal Surani

@@ -45,7 +45,6 @@ Traffic flows from the internet through an Application Load Balancer (ALB) to an
 
 ## Key Cloud Engineering Features
 
-* **Zero-SSH Inbound Security:** The EC2 host exposes zero inbound management ports (Port 22 is disabled). Deployments and server access execute securely via AWS Systems Manager (SSM) agent and IAM instance profiles.
 * **Infrastructure as Code:** The AWS compute footprint, container registry, security groups, target groups, and load balancer are declared and managed deterministically via Terraform.
 * **Continuous Delivery Pipeline:** Every merge to `main` authenticates to AWS via IAM roles/secrets, builds an immutable Docker image tagged with the commit SHA, pushes to Amazon ECR, and notifies the EC2 host via SSM to execute a zero-downtime container swap.
 * **Load Balancer Abstraction:** Traffic is received and distributed via an AWS Application Load Balancer, abstracting the EC2 public IP and serving as the centralized ingress point for custom domain routing.

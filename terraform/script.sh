@@ -1,9 +1,9 @@
 #!/bin/bash
-apt-get update -y
-apt-get install -y docker.io unzip
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
+sudo apt-get update -y
+sudo apt-get install -y docker.io unzip
+sudo curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+sudo unzip awscliv2.zip
 ./aws/install
-systemctl start docker
-systemctl enable docker
-usermod -aG docker ubuntu
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod -aG docker ubuntu

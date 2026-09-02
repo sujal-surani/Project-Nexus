@@ -53,7 +53,7 @@ resource "aws_security_group" "nexus_sg" {
 }
 
 resource "aws_instance" "nexus_host" {
-  ami                  = "ami-090d68841c2a28756"
+  ami                  = "ami-01a00762f46d584a1"
   instance_type        = "t3.micro"
   iam_instance_profile = aws_iam_instance_profile.ec2_profile.name
   vpc_security_group_ids = [aws_security_group.nexus_sg.id]
